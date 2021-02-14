@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9000000"
+    android:paddingBottom="16dp"
+    tools:layout_height="700dp">
+
+    <TextView
+        android:id="@+id/dialog_base_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/dialog_base_end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/dialog_base_start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_base_icon"
+        tools:text="Never Gonna Give You Up" />
+
+    <ImageView
+        android:id="@+id/dialog_base_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/dialog_base_start_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/dialog_base_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/open_sans_regular"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_base_do_not_show_message_again_text"
+        app:layout_constraintEnd_toStartOf="@+id/dialog_base_end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/dialog_base_start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_base_title"
+        tools:text="We're no strangers to love You know the rules and so do I A full commitment's what I'm thinking of You wouldn't get this from any other guy I just wanna tell you how I'm feeling Gotta make you understand Never gonna give you up Never gonna let you down Never gonna run around and desert you Never gonna make you cry Never gonna say goodbye Never gonna tell a lie and hurt you We've known each other for so long Your heart's been aching but you're too shy to say it Inside we both know what's been going on We know the game and we're gonna play it And if you ask me how I'm feeling Don't tell me you're too blind to see" />
+
+    <TextView
+        android:id="@+id/dialog_base_do_not_show_message_again_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="41dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/dialog_base_positive_button"
+        app:layout_constraintStart_toStartOf="@+id/dialog_base_start_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_base_text"
+        tools:text="Do not show this message again"
+        tools:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/dialog_base_do_not_show_message_again_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:paddingStart="30dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/dialog_base_do_not_show_message_again_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dialog_base_do_not_show_message_again_text"
+        tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/dialog_base_positive_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="13dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="10dp"
+        app:icon="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dialog_base_end_guideline"
+        app:layout_constraintWidth_percent="0.3"
+        tools:text="Ok" />
+
+    <Button
+        android:id="@+id/dialog_base_neutral_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingStart="13dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="10dp"
+        app:icon="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dialog_base_end_guideline"
+        app:layout_constraintStart_toStartOf="@+id/dialog_base_start_guideline"
+        app:layout_constraintWidth_percent="0.3"
+        tools:text="OkN" />
+
+    <Button
+        android:id="@+id/dialog_base_negative_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:paddingStart="13dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="13dp"
+        android:paddingBottom="10dp"
+        app:icon="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/dialog_base_start_guideline"
+        app:layout_constraintWidth_percent="0.3"
+        tools:text="Cancel" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dialog_base_start_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/dialog_base_end_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

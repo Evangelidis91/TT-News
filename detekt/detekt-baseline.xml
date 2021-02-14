@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>MagicNumber:ArticleViewHolder.kt$ArticleViewHolder$11</ID>
+    <ID>MagicNumber:ArticleViewHolder.kt$ArticleViewHolder$7</ID>
+    <ID>MagicNumber:NewsRepository.kt$NewsRepository$100</ID>
+    <ID>MandatoryBracesIfStatements:BaseWebViewActivity.kt$BaseWebViewActivity$binding.webView.goBack()</ID>
+    <ID>MandatoryBracesIfStatements:BaseWebViewActivity.kt$BaseWebViewActivity$super.onBackPressed()</ID>
+    <ID>MultiLineIfElse:com.evangelidis.t_tnews.views.webview.BaseWebViewActivity.kt:39</ID>
+    <ID>MultiLineIfElse:com.evangelidis.t_tnews.views.webview.BaseWebViewActivity.kt:41</ID>
+    <ID>TooGenericExceptionCaught:InternetStatus.kt$InternetStatus$e: Exception</ID>
+    <ID>TooManyFunctions:ViewExt.kt$com.evangelidis.t_tnews.extensions.ViewExt.kt</ID>
+  </Whitelist>
+</SmellBaseline>

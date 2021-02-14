@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.evangelidis.t_tnews">
+
+    <application
+        android:name=".NewsApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_image"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/app_image"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TTNews">
+
+        <activity
+            android:name=".views.splashscreen.SplashScreenActivity"
+            android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.savedArticles.SavedArticlesActivity"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".views.webview.BaseWebViewActivity"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".views.base.BaseActivity"
+            android:screenOrientation="sensorPortrait" />
+
+        <activity
+            android:name=".views.main.MainActivity"
+            android:screenOrientation="sensorPortrait" />
+
+    </application>
+
+</manifest>

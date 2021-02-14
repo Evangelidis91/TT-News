@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Τα νέα της Ελλάδας</string>
+
+    <string name="no_internet">Δεν υπάρχει σύνδεση στο internet. Συνδεθείτε για προβολή των νέων.</string>
+    <string name="no_url">Δεν υπάρχει διαθέσιμη ιστοσελίδα για αυτό το άρθρο.</string>
+    <string name="saved_articles_page_title">Αποθηκευμένες ειδήσεις</string>
+</resources>

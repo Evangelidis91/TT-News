@@ -1,0 +1,115 @@
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.9.1")
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+repositories {
+    google()
+    jcenter()
+    maven { url "https://jitpack.io"}
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.evangelidis.t_tnews"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+detekt {
+    toolVersion = '1.9.1'
+    input = files(
+            "src/main/java",
+            "src/debug/java",
+            "src/qa/java",
+            "src/release/java"
+    )
+    autoCorrect = true
+    baseline = file("../detekt/detekt-baseline.xml")
+    config = files("../detekt/detekt-config.yml")
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //region AndroidX
+    implementation "androidx.core:core-ktx:$versions.androidXCore"
+    implementation "androidx.appcompat:appcompat:$versions.appCompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
+    //endregion
+
+    //region Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    //endregion
+
+    //region Room
+    implementation "androidx.room:room-runtime:$versions.room"
+    implementation "androidx.room:room-rxjava2:$versions.room"
+    kapt "androidx.room:room-compiler:$versions.room"
+    implementation "androidx.room:room-ktx:$versions.room"
+    //endregion
+
+    //region RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+    //endregion
+
+    //region Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+    //endregion
+
+    //region Koin
+    implementation "org.koin:koin-android:$versions.koin"
+    implementation "org.koin:koin-androidx-viewmodel:$versions.koin"
+    //endregion
+
+    //region Test
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "androidx.test.ext:junit:$versions.junitExt"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
+    //endregion
+
+    implementation "android.arch.lifecycle:extensions:$versions.lifecycleExtensions"
+    implementation "com.tuyenmonkey:mkloader:$versions.loader"
+    implementation "com.github.Evangelidis91:TanTinToast:$versions.tanTinToast"
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    implementation 'joda-time:joda-time:2.10.10'
+    implementation 'com.github.pwittchen:reactivenetwork-rx2:3.0.2'
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$versions.detekt"
+
+}
